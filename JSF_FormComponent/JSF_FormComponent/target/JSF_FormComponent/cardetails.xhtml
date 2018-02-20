@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core"> 
+    
+<h:head>
+         
+	<title>Formulario ejemplo</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"></link>
+</h:head>
+<h:body>
+
+    <div align="center" style="margin-top: 50px;">
+        <h:form class="form-horizontal " id="form">
+            <h3 style="margin-bottom: 30px;"><strong>Formulario ejemplo</strong></h3>
+                    <h:panelGrid columns="3">
+                        
+                             
+                        
+                            <h:outputLabel for="nombreCarro">Nombre del carro:</h:outputLabel>
+                            <h:inputText value="#{car.cname}" id="nombreCarro" class="form-control" >
+                                <f:validator validatorId="validadorNombreCarro" />
+                                <p:ajax event="blur" update="msjValNombreCarro" />
+                            </h:inputText>
+                            <p:message for="nombreCarro" id="msjValNombreCarro" />
+
+
+                            <h:outputLabel for="identificadorCarro">Identificador del carro:</h:outputLabel>
+                            <h:inputText value="#{car.id}" id="identificadorCarro" class="form-control">
+                                <f:validator validatorId="validadorIdentificadorCarro" />
+                                <p:ajax event="blur" update="msjvalidadorIdentificadorCarro" />
+                            </h:inputText>
+                            <p:message for="identificadorCarro" id="msjvalidadorIdentificadorCarro" />
+                            
+
+                            <h:outputLabel for="colorCarro">Color:</h:outputLabel>
+                            <h:inputText value="#{car.color}" id="colorCarro" class="form-control">
+                                <f:validator validatorId="validadorColorCarro" />
+                                <p:ajax event="blur" update="msjvalidadorColorCarro" />
+                            </h:inputText>
+                            <p:message for="colorCarro" id="msjvalidadorColorCarro" />
+                           
+
+                            <h:outputLabel for="modeloCarro">Modelo:</h:outputLabel>
+                            <h:inputText value="#{car.model}" id="modeloCarro" class="form-control">
+                                <f:validator validatorId="validadorModeloCarro" />
+                                <p:ajax event="blur" update="msjvalidadorModeloCarro" />
+                            </h:inputText>
+                             <p:message for="modeloCarro" id="msjvalidadorModeloCarro" />
+                           
+     
+                            <h:outputLabel for="numeroRegistroCarro">Numero de registro:</h:outputLabel>
+                            <h:inputText value="#{car.regno}" id="numeroRegistroCarro" class="form-control"></h:inputText>
+                            <br />
+                            <br />
+                            
+                            <h:outputLabel ></h:outputLabel>
+                            <h:commandButton action="viewdetails" value="Ver Informacion" class="btn btn-info" style="margin-top: 30px;" id="informacion"></h:commandButton>
+                           
+                    </h:panelGrid>
+            </h:form>
+        </div>
+</h:body>
+</html>
+
+
